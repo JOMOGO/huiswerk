@@ -1,18 +1,11 @@
 """
 Name:           Robin Groot
 Version:        1.0
-Inputs:         Number start, number end, amount of guesses,
-Outputs:
-Description:    Random number guesser
+Inputs:         Number start, Number end, Amount of guesses, Your guesses
+Outputs:        Random number, Too low or to high
+Description:    Random number guesser with hints.
 """
 import random
-# from pprint import pprint
-
-# Sets the amount of guesses allowed.
-allowed_guess = int(input("How many times do you want to guess you can choose up to 5 times: "))
-if not 1 <= allowed_guess <= 5:
-    print("\nYou filled in a wrong amount try again.")
-    allowed_guess = int(input("How many times do you want to guess you can choose up to 5 times: "))
 
 # Making variables
 guessed_right = False
@@ -20,6 +13,13 @@ amount_guess = 0
 guess_list = []
 guess_list_text = []
 list_input = []
+list_output = []
+
+# Sets the amount of guesses allowed.
+allowed_guess = int(input("How many times do you want to guess you can choose up to 5 times: "))
+if not 1 <= allowed_guess <= 5:
+    print("\nYou filled in a wrong amount try again.")
+    allowed_guess = int(input("How many times do you want to guess you can choose up to 5 times: "))
 
 # Fills in the numbers you can choose between.
 number_start = int(input("Choose number start: "))
@@ -49,12 +49,11 @@ for x in guess_list:
     else:
         guess_list_text.append(", Too high")
 
-list_output = []
 # print your guesses
 for gl, gt in zip(guess_list, guess_list_text):
     list_output.append(gl)
     list_output.append(gt)
-# print_output = pprint(list_output)
+
 # Gives you your result.
 if guessed_right:
     print(f"\nYou guessed it right!!!"
