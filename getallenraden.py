@@ -1,6 +1,6 @@
 """
 Name:           Robin Groot
-Version:        1.0
+Version:        1.1
 Inputs:         Number start, Number end, Amount of guesses, Your guesses
 Outputs:        Random number, Too low or to high
 Description:    Random number guesser with hints and you can chooses the range to choose from.
